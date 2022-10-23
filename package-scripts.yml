@@ -1,0 +1,43 @@
+scripts:
+    clean:
+        script: 'rm -rf dist'
+        hiddenFromHelp: true
+    transpile:
+        script: 'tsc'
+        hiddenFromHelp: true
+    lint:
+        check:
+            script: 'eslint . --ext .ts'
+            hiddenFromHelp: true
+        fix:
+            script: 'eslint . --ext .ts --fix'
+    format:
+        check:
+            script: 'prettier "src" --check'
+            hiddenFromHelp: true
+        fix:
+            script: 'prettier "src" --write'
+            description: 'Format files'
+    prepare:
+        script: "husky install"
+        hiddenFromHelp: true
+
+    build:
+        default:
+            script: 'nps format.fix lint.fix clean transpile'
+            description: 'Build project'
+    start:
+        dev:
+            script: 'ts-node src/index.ts'
+            hiddenFromHelp: true
+        watch:
+            script: 'nodemon'
+            description: 'Start project (dev, watch)'
+        prod:
+            script: 'node dist/index.js'
+            hiddenFromHelp: true
+        default:
+            script: 'nps build start.prod'
+            description: 'Start project (prod)'
+
+
