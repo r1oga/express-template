@@ -9,4 +9,5 @@
 | Pre-commit hook (formatting, linting) | [husky](https://typicode.github.io/husky/#/)                    |                                              |
 | Reloading                             | [nodemon](https://nodemon.io/)                                  | [nodemon.json](./nodemon.json)               |
 | Validation                            | [class-validator](https://github.com/typestack/class-validator) |                                              |
+| Basic Security Features               | [helmet](https://helmetjs.github.io/)                           |                                              |
 
