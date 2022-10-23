@@ -1,1 +1,3 @@
-export { Controller } from './Controller'
+import { Controller } from './Controller'
+
+export const controllers = [Controller]

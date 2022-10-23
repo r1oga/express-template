@@ -28,8 +28,8 @@ export class Controller {
   }
 
   @Post('/items')
-  post(@Body() post: Item): Item {
-    return this.itemRepository.save(post)
+  create(@Body({ required: true }) item: Item): Item {
+    return this.itemRepository.save(item)
   }
 
   @Delete('/items/:id')
