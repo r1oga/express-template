@@ -39,5 +39,3 @@ scripts:
         default:
             script: 'nps build start.prod'
             description: 'Start project (prod)'
-
-

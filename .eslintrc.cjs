@@ -6,6 +6,7 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   root: true,
   rules: {
-    "no-console": 1
+    "no-console": 1,
+    "space-before-function-paren": ["error", "never"]
   }
 };

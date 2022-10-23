@@ -1,6 +1,12 @@
-const bar = () => {
-  console.log('Hello World')
-}
+import 'reflect-metadata'
+import { Container } from 'typedi'
+import { useContainer } from 'routing-controllers'
 
-bar()
-;[1, 2, 3].forEach(bar)
+import { app } from './app'
+
+// Setup routing-controllers to use typedi container.
+useContainer(Container)
+
+app.listen(3000)
+
+console.log('Server 👂 on port 3000')
