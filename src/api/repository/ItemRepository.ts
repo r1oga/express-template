@@ -1,5 +1,6 @@
 import { Service } from 'typedi'
-import { Item } from '../models/Item'
+
+import { Item } from '@models'
 
 @Service()
 export class ItemRepository {
@@ -7,7 +8,8 @@ export class ItemRepository {
   private items = [
     new Item(1, 'item #1'),
     new Item(2, 'item #2'),
-    new Item(3, 'item #3')
+    new Item(3, 'item #3'),
+    new Item(3, 'item #4'),
   ]
 
   findAll() {

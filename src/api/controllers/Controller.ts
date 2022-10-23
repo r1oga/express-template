@@ -7,8 +7,9 @@ import {
   Body
 } from 'routing-controllers'
 import { Service } from 'typedi'
-import { ItemRepository } from '../repository/ItemRepository'
-import { Item } from '../models'
+
+import { ItemRepository } from '@repository'
+import { Item } from '@models'
 
 @Service()
 @JsonController()
