@@ -5,8 +5,14 @@
   "main": "index.js",
   "author": "r1oga <38692952+r1oga@users.noreply.github.com>",
   "license": "MIT",
+  "_moduleAliases": {
+    "@controllers": "dist/api/controllers",
+    "@models": "dist/api/models",
+    "@repository": "dist/api/repository"
+  },
   "dependencies": {
     "express": "^4.18.2",
+    "module-alias": "^2.2.2",
     "nps": "^5.10.0",
     "nps-utils": "^1.7.0",
     "routing-controllers": "^0.9.0",

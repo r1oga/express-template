@@ -34,7 +34,7 @@ scripts:
             script: 'nodemon'
             description: 'Start project (dev, watch)'
         prod:
-            script: 'node dist/index.js'
+            script: 'node -r module-alias/register ./dist --env=production'
             hiddenFromHelp: true
         default:
             script: 'nps build start.prod'

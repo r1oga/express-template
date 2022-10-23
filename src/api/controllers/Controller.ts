@@ -4,7 +4,7 @@ import {
   Post,
   Param,
   Delete,
-  Body
+  Body,
 } from 'routing-controllers'
 import { Service } from 'typedi'
 
