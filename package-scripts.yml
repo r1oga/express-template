@@ -28,7 +28,7 @@ scripts:
             description: 'Build project'
     start:
         dev:
-            script: 'ts-node src/index.ts'
+            script: 'ts-node --files -r tsconfig-paths/register ./src'
             hiddenFromHelp: true
         watch:
             script: 'nodemon'

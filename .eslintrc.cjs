@@ -7,6 +7,7 @@ module.exports = {
   root: true,
   rules: {
     "no-console": 1,
-    "space-before-function-paren": ["error", "never"]
+    "space-before-function-paren": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"]
   }
 };
