@@ -1,49 +1,49 @@
 scripts:
-    clean:
-        script: 'rm -rf dist'
-        hiddenFromHelp: true
-    transpile:
-        script: 'tsc'
-        hiddenFromHelp: true
-    lint:
-        check:
-            script: 'eslint . --ext .ts'
-            hiddenFromHelp: true
-        fix:
-            script: 'eslint . --ext .ts --fix'
-    format:
-        check:
-            script: 'prettier "src" --check'
-            hiddenFromHelp: true
-        fix:
-            script: 'prettier "src" --write'
-            description: 'Format files'
-    prepare:
-        script: "husky install"
-        hiddenFromHelp: true
+  clean:
+    script: 'rm -rf dist'
+    hiddenFromHelp: true
+  transpile:
+    script: 'tsc'
+    hiddenFromHelp: true
+  lint:
+    check:
+      script: 'eslint . --ext .ts'
+      hiddenFromHelp: true
+    fix:
+      script: 'eslint . --ext .ts --fix'
+  format:
+    check:
+      script: 'prettier "src" --check'
+      hiddenFromHelp: true
+    fix:
+      script: 'prettier "src" --write'
+      description: 'Format files'
+  prepare:
+    script: "husky install"
+    hiddenFromHelp: true
 
-    test:
-        default:
-            script: 'jest'
-            description: 'Run unit tests'
-        watch:
-            script: 'jest --watch'
-            description: 'Run unit tests (watch)'
+  test:
+    default:
+      script: 'jest'
+      description: 'Run unit tests'
+    watch:
+      script: 'jest --watch'
+      description: 'Run unit tests (watch)'
 
-    build:
-        default:
-            script: 'nps format.fix lint.fix clean transpile'
-            description: 'Build project'
-    start:
-        dev:
-            script: 'ts-node --files -r tsconfig-paths/register ./src'
-            hiddenFromHelp: true
-        watch:
-            script: 'nodemon'
-            description: 'Start project (dev, watch)'
-        prod:
-            script: 'node -r module-alias/register ./dist --env=production'
-            hiddenFromHelp: true
-        default:
-            script: 'nps build start.prod'
-            description: 'Start project (prod)'
+  build:
+    default:
+      script: 'nps format.fix lint.fix clean transpile'
+      description: 'Build project'
+  start:
+    dev:
+      script: 'ts-node --files -r tsconfig-paths/register ./src'
+      hiddenFromHelp: true
+    watch:
+      script: 'nodemon'
+      description: 'Start project (dev, watch)'
+    prod:
+      script: 'node -r module-alias/register ./dist --env=production'
+      hiddenFromHelp: true
+    default:
+      script: 'nps build start.prod'
+      description: 'Start project (prod)'
