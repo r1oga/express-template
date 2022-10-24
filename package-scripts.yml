@@ -36,10 +36,10 @@ scripts:
       description: 'Build project'
   start:
     dev:
-      script: 'ts-node --files -r tsconfig-paths/register ./src'
+      script: 'tsnd --rs --exit-child --clear --quiet --files -r tsconfig-paths/register ./src'
       hiddenFromHelp: true
     watch:
-      script: 'nodemon'
+      script: 'tsnd --respawn --rs --exit-child --clear --quiet --files -r tsconfig-paths/register ./src'
       description: 'Start project (dev, watch)'
     prod:
       script: 'node -r module-alias/register ./dist --env=production'
