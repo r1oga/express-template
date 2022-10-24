@@ -9,7 +9,7 @@ const jestConfig: JestConfigWithTsJest = {
     prefix: '<rootDir>/',
   }),
   preset: 'ts-jest',
-  setupFilesAfterEnv: ['./test/unit/lib/setup.ts'],
+  setupFilesAfterEnv: ['./test/setup.ts'],
   verbose: true,
 }
 
