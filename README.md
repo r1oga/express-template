@@ -13,5 +13,9 @@
 | Logging                               | [winston](https://github.com/winstonjs/winston), [morgan](https://github.com/expressjs/morgan)                                      |                                              |
 | Testing                               | [jest](https://jestjs.io/), [ts-jest](https://kulshekhar.github.io/ts-jest/), [supertest](https://github.com/visionmedia/supertest) | [jest.config.ts](./jest.config.ts)           |
 
-### Getting started
-- `npx husky-init`
+## Getting Started
+1. Use template: `gh create --template r1oga/express-template --public [repo-name]`
+2. Clone: `gh repo clone [repo-name]`
+3. Install dependencies: `yarn`
+4. Husky init: `npx husky-init`
+5. Check scripts: `nps help`
