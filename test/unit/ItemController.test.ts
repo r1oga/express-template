@@ -1,6 +1,6 @@
-import { Controller } from '@controllers/Controller'
+import { Controller } from 'src/api/controllers/Controller'
 import { Item } from '@models'
-import { RepositoryMock } from '../lib/RepositoryMock'
+import { RepositoryMock } from 'test/unit/lib/RepositoryMock'
 
 describe('ItemController', () => {
   it('Returns list of users', async () => {
