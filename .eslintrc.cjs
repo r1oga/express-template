@@ -6,8 +6,10 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   root: true,
   rules: {
-    "no-console": 1,
-    "space-before-function-paren": ["error", "never"],
-    "comma-dangle": ["error", "always-multiline"]
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "comma-dangle": ["error", "always-multiline"],
+    "no-console": "warn",
+    "no-useless-constructor": "warn",
+    "space-before-function-paren": ["error", "never"]
   }
 };

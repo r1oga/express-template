@@ -1,6 +1,7 @@
 import { Service } from 'typedi'
 
 import { Item } from '@models'
+import { Logger, LoggerInterface } from 'src/decorators/Logger'
 
 @Service()
 export class ItemRepository {
@@ -11,6 +12,8 @@ export class ItemRepository {
     new Item(3, 'item #3'),
     new Item(3, 'item #4'),
   ]
+
+  constructor(@Logger() private logger: LoggerInterface) {}
 
   findAll() {
     // simulate async by creating an empty promise
@@ -25,9 +28,10 @@ export class ItemRepository {
     return foundItem
   }
 
-  save(post: Item) {
-    this.items.push(post)
-    return post
+  save(item: Item) {
+    this.items.push(item)
+    this.logger.info(`item ${item.id} ${item.name} has been saved`)
+    return item
   }
 
   remove(id: number) {
