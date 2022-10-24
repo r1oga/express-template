@@ -22,6 +22,14 @@ scripts:
         script: "husky install"
         hiddenFromHelp: true
 
+    test:
+        default:
+            script: 'jest'
+            description: 'Run unit tests'
+        watch:
+            script: 'jest --watch'
+            description: 'Run unit tests (watch)'
+
     build:
         default:
             script: 'nps format.fix lint.fix clean transpile'

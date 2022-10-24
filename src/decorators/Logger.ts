@@ -1,6 +1,6 @@
 import { Container } from 'typedi'
 
-import { logger } from 'src/lib/logger'
+import { logger } from '~/logger'
 
 export function Logger(): ParameterDecorator {
   return (object, propertyKey, index) => {

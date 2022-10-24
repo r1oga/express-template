@@ -1,7 +1,7 @@
 import { Service } from 'typedi'
 
 import { Item } from '@models'
-import { Logger, LoggerInterface } from 'src/decorators/Logger'
+import { Logger, LoggerInterface } from '@decorators/Logger'
 
 @Service()
 export class ItemRepository {
@@ -34,7 +34,7 @@ export class ItemRepository {
     return item
   }
 
-  remove(id: number) {
+  delete(id: number) {
     const post = this.findOne(id)
     if (post) this.items.splice(this.items.indexOf(post), 1)
     return post

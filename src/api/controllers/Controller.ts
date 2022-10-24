@@ -9,7 +9,7 @@ import {
 import { Service } from 'typedi'
 
 import { ItemRepository } from '@repository'
-import { Item } from '@models'
+import { Item } from '@models/Item'
 
 @Service()
 @JsonController()
@@ -34,6 +34,6 @@ export class Controller {
 
   @Delete('/items/:id')
   delete(@Param('id') id: number) {
-    return this.itemRepository.remove(id)
+    return this.itemRepository.delete(id)
   }
 }
