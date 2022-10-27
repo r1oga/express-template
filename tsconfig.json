@@ -15,7 +15,9 @@
       "@controllers/*": [
         "src/api/controllers/*"
       ],
-      "@decorators/*": ["src/decorators/*"],
+      "@decorators/*": [
+        "src/decorators/*"
+      ],
       "@middlewares": [
         "src/api/middlewares"
       ],
@@ -28,7 +30,9 @@
       "@repository": [
         "src/api/repository"
       ],
-      "~/*": ["src/lib/*"]
+      "~/*": [
+        "src/lib/*"
+      ]
     },
     "resolveJsonModule": true,
     "allowJs": true,
