@@ -4,7 +4,7 @@ on:
       - main
 
 jobs:
-  Build & Test:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
