@@ -11,16 +11,13 @@ const colors = {
   debug: 'white',
 }
 
-const level = () => {
-  const env = process.env.NODE_ENV || 'development'
-  const isDevelopment = env === 'development'
-  return isDevelopment ? 'debug' : 'warn'
-}
+const level = process.env.NODE_ENV === 'development' ? 'debug' : 'warn'
+const silent = process.env.NODE_ENV === 'test'
 
 addColors(colors)
 
 const logger = createLogger({
-  level: level(),
+  level,
   levels: {
     error: 0,
     warn: 1,
@@ -33,7 +30,7 @@ const logger = createLogger({
     printf((info) => `${info.timestamp} ${info.level}: ${info.message}`),
   ),
   transports: [
-    new Console({ format: colorize({ all: true }) }),
+    new Console({ format: colorize({ all: true }), silent }),
     new File({
       filename: 'logs/error.log',
       level: 'error',

@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@prisma/client': ^4.5.0
   '@types/express': ^4.17.14
   '@types/jest': ^29.2.0
   '@types/morgan': ^1.9.3
@@ -20,12 +21,14 @@ specifiers:
   helmet: ^6.0.0
   husky: ^8.0.1
   jest: ^29.2.2
+  jest-mock-extended: ^3.0.1
   module-alias: ^2.2.2
   morgan: ^1.10.0
   nodemon: ^2.0.20
   nps: ^5.10.0
   nps-utils: ^1.7.0
   prettier: ^2.7.1
+  prisma: ^4.5.0
   reflect-metadata: ^0.1.13
   routing-controllers: ^0.9.0
   supertest: ^6.3.1
@@ -38,6 +41,7 @@ specifiers:
   winston: ^3.8.2
 
 dependencies:
+  '@prisma/client': 4.5.0_prisma@4.5.0
   class-validator: 0.13.2
   express: 4.18.2
   helmet: 6.0.0
@@ -67,8 +71,10 @@ devDependencies:
   eslint-plugin-promise: 6.1.1_eslint@8.26.0
   husky: 8.0.1
   jest: 29.2.2_4pb6an67rakrle6rtido6z2a34
+  jest-mock-extended: 3.0.1_r7gdwuj75x2gz25bauak3xcnbm
   nodemon: 2.0.20
   prettier: 2.7.1
+  prisma: 4.5.0
   reflect-metadata: 0.1.13
   supertest: 6.3.1
   ts-jest: 29.0.3_fxe5mizohawh6cjruma5lyyrna
@@ -764,6 +770,28 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
+
+  /@prisma/client/4.5.0_prisma@4.5.0:
+    resolution: {integrity: sha512-B2cV0OPI1smhdYUxsJoLYQLoMlLH06MUxgFUWQnHodGMX98VRVXKmQE/9OcrTNkqtke5RC+YU24Szxd04tZA2g==}
+    engines: {node: '>=14.17'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 4.5.0-43.0362da9eebca54d94c8ef5edd3b2e90af99ba452
+      prisma: 4.5.0
+    dev: false
+
+  /@prisma/engines-version/4.5.0-43.0362da9eebca54d94c8ef5edd3b2e90af99ba452:
+    resolution: {integrity: sha512-o7LyVx8PPJBLrEzLl6lpxxk2D5VnlM4Fwmrbq0NoT6pr5aa1OuHD9ZG+WJY6TlR/iD9bhmo2LNcxddCMr5Rv2A==}
+    dev: false
+
+  /@prisma/engines/4.5.0:
+    resolution: {integrity: sha512-4t9ir2SbQQr/wMCNU4YpHWp5hU14J2m3wHUZnGJPpmBF8YtkisxyVyQsKd1e6FyLTaGq8LOLhm6VLYHKqKNm+g==}
+    requiresBuild: true
 
   /@sinclair/typebox/0.24.51:
     resolution: {integrity: sha512-1P1OROm/rdubP5aFDSZQILU0vrLCJ4fvHt6EoqHEM+2D/G5MK3bIaymUKLit8Js9gbns5UyJnkP/TZROLw4tUA==}
@@ -3336,6 +3364,17 @@ packages:
       stack-utils: 2.0.5
     dev: true
 
+  /jest-mock-extended/3.0.1_r7gdwuj75x2gz25bauak3xcnbm:
+    resolution: {integrity: sha512-RF4Ow8pXvbRuEcCTj56oYHmig5311BSFvbEGxPNYL51wGKGu93MvVQgx0UpFmjqyBXIcElkZo2Rke88kR1iSKQ==}
+    peerDependencies:
+      jest: ^24.0.0 || ^25.0.0 || ^26.0.0 || ^27.0.0 || ^28.0.0 || ^29.0.0
+      typescript: ^3.0.0 || ^4.0.0
+    dependencies:
+      jest: 29.2.2_4pb6an67rakrle6rtido6z2a34
+      ts-essentials: 7.0.3_typescript@4.8.4
+      typescript: 4.8.4
+    dev: true
+
   /jest-mock/29.2.2:
     resolution: {integrity: sha512-1leySQxNAnivvbcx0sCB37itu8f4OX2S/+gxLAV4Z62shT4r4dTG9tACDywUAEZoLSr36aYUTsVp3WKwWt4PMQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -4460,6 +4499,14 @@ packages:
       react-is: 18.2.0
     dev: true
 
+  /prisma/4.5.0:
+    resolution: {integrity: sha512-9Aeg4qiKlv9Wsjz4NO8k2CzRzlvS3A4FYVJ5+28sBBZ0eEwbiVOE/Jj7v6rZC1tFW2s4GSICQOAyuOjc6WsNew==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 4.5.0
+
   /process-nextick-args/2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
     dev: false
@@ -5214,6 +5261,14 @@ packages:
   /triple-beam/1.3.0:
     resolution: {integrity: sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==}
     dev: false
+
+  /ts-essentials/7.0.3_typescript@4.8.4:
+    resolution: {integrity: sha512-8+gr5+lqO3G84KdiTSMRLtuyJ+nTBVRKuCrK4lidMPdVeEp0uqC875uE5NMcaA7YYMN7XsNiFQuMvasF8HT/xQ==}
+    peerDependencies:
+      typescript: '>=3.7.0'
+    dependencies:
+      typescript: 4.8.4
+    dev: true
 
   /ts-jest/29.0.3_fxe5mizohawh6cjruma5lyyrna:
     resolution: {integrity: sha512-Ibygvmuyq1qp/z3yTh9QTwVVAbFdDy/+4BtIQR2sp6baF2SJU/8CKK/hhnGIDY2L90Az2jIqTwZPnN2p+BweiQ==}

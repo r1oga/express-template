@@ -10,6 +10,7 @@
 | Reloading                             | [ts-node-dev](https://github.com/wclr/ts-node-dev)                                                                                  |                                                |
 | Validation                            | [class-validator](https://github.com/typestack/class-validator)                                                                     |                                                |
 | Basic Security Features               | [helmet](https://helmetjs.github.io/)                                                                                               |                                                |
+| ORM                                   | [prisma](https://www.prisma.io/)                                                                                                    | [schema.prisma](./prisma/schema.prisma)        |
 | Logging                               | [winston](https://github.com/winstonjs/winston), [morgan](https://github.com/expressjs/morgan)                                      |                                                |
 | Testing                               | [jest](https://jestjs.io/), [ts-jest](https://kulshekhar.github.io/ts-jest/), [supertest](https://github.com/visionmedia/supertest) | [jest.config.ts](./jest.config.ts)             |
 
@@ -18,4 +19,5 @@
 2. Clone: `gh repo clone [repo-name]`
 3. Install dependencies: `yarn`
 4. Husky init: `npx husky-init`
-5. Check scripts: `nps help`
+5. Create database and run migration: `pnpm exec prisma migrate dev --name init`
+6. Check scripts: `nps help`

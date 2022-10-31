@@ -27,8 +27,14 @@
       "@models/*": [
         "src/api/models/*"
       ],
-      "@repository": [
-        "src/api/repository"
+      "@repositories": [
+        "src/api/repositories"
+      ],
+      "@repositories/*": [
+        "src/api/repositories/*"
+      ],
+      "@services": [
+        "src/api/services"
       ],
       "~/*": [
         "src/lib/*"

@@ -1,29 +1,7 @@
-export class RepositoryMock<T> {
-  public one: T | undefined
-  public list: T[] | undefined
+import { PrismaClient } from '@prisma/client';
+import { mockDeep, DeepMockProxy } from 'jest-mock-extended';
 
-  public findMock = jest.fn()
-  public findOneMock = jest.fn()
-  public saveMock = jest.fn()
-  public deleteMock = jest.fn()
+export type DbMock = DeepMockProxy<PrismaClient>
 
-  public findOne(...args: any[]) {
-    this.findMock(args)
-    return Promise.resolve(this.one)
-  }
+export const createMockContext = (): DbMock => mockDeep<PrismaClient>()
 
-  public findAll(...args: any[]) {
-    this.findOneMock(args)
-    return Promise.resolve(this.list)
-  }
-
-  public save(value: T, ...args: any[]) {
-    this.saveMock(value, args)
-    return Promise.resolve(value)
-  }
-
-  public delete(value: T, ...args: any[]) {
-    this.deleteMock(value, args)
-    return Promise.resolve(value)
-  }
-}
