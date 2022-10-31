@@ -27,7 +27,11 @@ const logger = createLogger({
   },
   format: combine(
     timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
-    printf((info) => `${info.timestamp} ${info.level}: ${info.message}`),
+    printf((info) =>
+      info.stack
+        ? `${info.timestamp} ${info.level}: ${info.message} ${info.stack}`
+        : `${info.timestamp} ${info.level}: ${info.message}`,
+    ),
   ),
   transports: [
     new Console({ format: colorize({ all: true }), silent }),

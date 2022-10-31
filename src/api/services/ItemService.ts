@@ -12,27 +12,37 @@ export class ItemService {
   ) {}
 
   async findAll() {
-    this.logger.info('Find all items')
-    return this.repository.findAll()
+    return this.repository.findAll().then((items) => {
+      this.logger.info('Find all items')
+      return items
+    })
   }
 
   async findOne(id: number) {
-    this.logger.info('Find one item')
-    return this.repository.findOne(id)
+    return this.repository.findOne(id).then((item) => {
+      this.logger.info('Find one item')
+      return item
+    })
   }
 
   async save(item: Item) {
-    this.logger.info(`Item ${item.id} ${item.name} has been saved`)
-    return this.repository.create(item)
+    return this.repository.create(item).then((createdItem) => {
+      this.logger.info(`Item ${item.id} ${item.name} has been saved`)
+      return createdItem
+    })
   }
 
   async update({ id, name }: Item) {
-    this.logger.info(`Update item ${id} with new name ${name}`)
-    return this.repository.update({ id, name })
+    return this.repository.update({ id, name }).then((updatedItem) => {
+      this.logger.info(`Update item ${id} with new name ${name}`)
+      return updatedItem
+    })
   }
 
   async delete(id: number) {
-    this.logger.info(`Delete user ${id}`)
-    return this.repository.delete(id)
+    return this.repository.delete(id).then((deletedItem) => {
+      this.logger.info(`Delete user ${id}`)
+      return deletedItem
+    })
   }
 }
