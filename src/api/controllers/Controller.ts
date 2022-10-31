@@ -5,6 +5,7 @@ import {
   Param,
   Delete,
   Body,
+  Put,
 } from 'routing-controllers'
 import { Service } from 'typedi'
 
@@ -34,5 +35,13 @@ export class Controller {
   @Delete('/items/:id')
   async delete(@Param('id') id: number) {
     return this.service.delete(id)
+  }
+
+  @Put('/items/:id')
+  async update(
+    @Param('id') id: number,
+    @Body({ required: true }) name: string,
+  ) {
+    return this.service.update({ id, name })
   }
 }
