@@ -1,17 +1,17 @@
 # Express Project - Template
 
-| Feature                               | With                                                                                                                                | Configuration File                           |
-|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
-| Typed                                 | [typescript](https://www.typescriptlang.org/)                                                                                       | [tsconfig.json](./tsconfig.json)             |
-| Formatting                            | [prettier](https://prettier.io/)                                                                                                    | [.prettierrc.js](./.prettierrc.js)           |
-| Linting                               | [eslint](https://eslint.org/)                                                                                                       | [.eslintrc.cjs](./.eslintrc.cjs)             |
-| Scripts                               | [nps](https://github.com/sezna/nps)                                                                                                 | [package-scripts.yaml](./package-scripts.yml) |
-| Pre-commit hook (formatting, linting) | [husky](https://typicode.github.io/husky/#/)                                                                                        |                                              |
-| Reloading                             | [ts-node-dev](https://github.com/wclr/ts-node-dev)                                                                                  |                                              |
-| Validation                            | [class-validator](https://github.com/typestack/class-validator)                                                                     |                                              |
-| Basic Security Features               | [helmet](https://helmetjs.github.io/)                                                                                               |                                              |
-| Logging                               | [winston](https://github.com/winstonjs/winston), [morgan](https://github.com/expressjs/morgan)                                      |                                              |
-| Testing                               | [jest](https://jestjs.io/), [ts-jest](https://kulshekhar.github.io/ts-jest/), [supertest](https://github.com/visionmedia/supertest) | [jest.config.ts](./jest.config.ts)           |
+| Feature                               | With                                                                                                                                | Configuration File                             |
+|---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| Typed                                 | [typescript](https://www.typescriptlang.org/)                                                                                       | [tsconfig.json](./tsconfig.json)               |
+| Formatting                            | [prettier](https://prettier.io/)                                                                                                    | [.prettierrc.yaml](./.prettierrc.yaml)         |
+| Linting                               | [eslint](https://eslint.org/)                                                                                                       | [.eslintrc.yaml](./.eslintrc.yaml)             |
+| Scripts                               | [nps](https://github.com/sezna/nps)                                                                                                 | [package-scripts.yaml](./package-scripts.yaml) |
+| Pre-commit hook (formatting, linting) | [husky](https://typicode.github.io/husky/#/)                                                                                        |                                                |
+| Reloading                             | [ts-node-dev](https://github.com/wclr/ts-node-dev)                                                                                  |                                                |
+| Validation                            | [class-validator](https://github.com/typestack/class-validator)                                                                     |                                                |
+| Basic Security Features               | [helmet](https://helmetjs.github.io/)                                                                                               |                                                |
+| Logging                               | [winston](https://github.com/winstonjs/winston), [morgan](https://github.com/expressjs/morgan)                                      |                                                |
+| Testing                               | [jest](https://jestjs.io/), [ts-jest](https://kulshekhar.github.io/ts-jest/), [supertest](https://github.com/visionmedia/supertest) | [jest.config.ts](./jest.config.ts)             |
 
 ## Getting Started
 1. Use template: `gh create --template r1oga/express-template --public [repo-name]`
