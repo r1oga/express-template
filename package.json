@@ -10,7 +10,8 @@
     "@decorators": "dist/decorators",
     "@middlewares": "dist/api/middlewares",
     "@models": "dist/api/models",
-    "@repository": "dist/api/repository",
+    "@repositories": "dist/api/repositories",
+    "@services": "dist/api/services",
     "~": "dist/lib"
   },
   "dependencies": {

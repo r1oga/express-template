@@ -8,32 +8,31 @@ import {
 } from 'routing-controllers'
 import { Service } from 'typedi'
 
-import { ItemRepository } from '@repository'
-import { Item } from '@models/Item'
+import { Item } from '@prisma/client'
+import { ItemService } from '@services'
 
 @Service()
 @JsonController()
 export class Controller {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(private itemRepository: ItemRepository) {}
+  constructor(private service: ItemService) {}
 
   @Get('/items')
-  all(): Promise<Item[]> {
-    return this.itemRepository.findAll()
+  async all() {
+    return this.service.findAll()
   }
 
   @Get('/items/:id')
-  one(@Param('id') id: number) {
-    return this.itemRepository.findOne(id)
+  async one(@Param('id') id: number) {
+    return this.service.findOne(id)
   }
 
   @Post('/items')
-  create(@Body({ required: true }) item: Item): Item {
-    return this.itemRepository.save(item)
+  async create(@Body({ required: true }) item: Item) {
+    return this.service.save(item)
   }
 
   @Delete('/items/:id')
-  delete(@Param('id') id: number) {
-    return this.itemRepository.delete(id)
+  async delete(@Param('id') id: number) {
+    return this.service.delete(id)
   }
 }
