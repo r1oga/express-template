@@ -1,6 +1,6 @@
 import { addColors, createLogger, format, transports } from 'winston'
 
-const { colorize, combine, timestamp, printf } = format
+const { colorize, combine, json, errors, printf, timestamp } = format
 const { Console, File } = transports
 
 const colors = {
@@ -25,21 +25,25 @@ const logger = createLogger({
     http: 3,
     debug: 4,
   },
-  format: combine(
-    timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
-    printf((info) =>
-      info.stack
-        ? `${info.timestamp} ${info.level}: ${info.message} ${info.stack}`
-        : `${info.timestamp} ${info.level}: ${info.message}`,
-    ),
-  ),
+  format: timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
   transports: [
-    new Console({ format: colorize({ all: true }), silent }),
+    new Console({
+      format: combine(
+        printf(({ level, message, stack, timestamp }) => {
+          const defaultMessage = `${level} ${timestamp} ${message}`
+          const showStack = process.env.NODE_ENV !== 'production' && stack
+          return showStack ? `${defaultMessage} ${stack}` : defaultMessage
+        }),
+        colorize({ all: true }),
+      ),
+      silent,
+    }),
     new File({
       filename: 'logs/error.log',
       level: 'error',
+      format: combine(errors(), json()),
     }),
-    new File({ filename: 'logs/all.log' }),
+    new File({ filename: 'logs/all.log', format: combine(errors(), json()) }),
   ],
 })
 

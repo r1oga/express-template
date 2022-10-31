@@ -31,12 +31,7 @@ export class ErrorHandlerMiddleware implements ExpressErrorMiddlewareInterface {
         error instanceof PrismaClientKnownRequestError
         ? error.constructor.name
         : error.name,
-      process.env.NODE_ENV === 'production'
-        ? { message: error.message }
-        : {
-            message: error.message,
-            stack: error.stack,
-          },
+      error,
     )
   }
 }
