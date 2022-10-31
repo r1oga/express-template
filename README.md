@@ -19,5 +19,6 @@
 2. Clone: `gh repo clone [repo-name]`
 3. Install dependencies: `yarn`
 4. Husky init: `npx husky-init`
-5. Create database and run migration: `pnpm exec prisma migrate dev --name init`
-6. Check scripts: `nps help`
+5. Define `DATABASE_URL` in an `.env` file: e.g `echo 'DATABASE_URL="file:./dev.db"' > .env`
+6. Create database and run migration: `pnpm exec prisma migrate dev --name init`
+7. Check scripts: `nps help`
