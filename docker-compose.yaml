@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+   app:
+     build: .
+#       SOME_ENV_VAR: /run/secrets/some_secret
+#     secrets:
+#       - some_secret
+     ports:
+       - "3000:3000"
+
+#secrets:
+#   some_secret:
+#     file: .secret
