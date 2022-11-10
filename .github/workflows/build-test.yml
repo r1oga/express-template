@@ -41,7 +41,7 @@ jobs:
         run: pnpm i --ignore-scripts
 
       - name: Lint
-        run: npm run nps lint.check
+        run: npm run nps lint.ci
 
       - name: Format
         run: npm run nps format.check
