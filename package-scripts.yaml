@@ -11,9 +11,6 @@ scripts:
       hiddenFromHelp: true
     fix:
       script: 'eslint . --ext .ts --fix'
-    ci:
-      script: 'eslint -c .eslintrc.ci.yaml . --ext .ts'
-      hiddenFromHelp: true
   format:
     check:
       script: 'prettier "src" --check'

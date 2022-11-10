@@ -43,7 +43,7 @@ jobs:
           pnpm exec prisma generate
 
       - name: Lint
-        run: npm run nps lint.ci
+        run: npm run nps lint.check
 
       - name: Format
         run: npm run nps format.check
