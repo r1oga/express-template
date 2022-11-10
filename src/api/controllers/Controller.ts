@@ -1,10 +1,10 @@
 import {
-  JsonController,
-  Get,
-  Post,
-  Param,
-  Delete,
   Body,
+  Delete,
+  Get,
+  JsonController,
+  Param,
+  Post,
   Put,
 } from 'routing-controllers'
 import { Service } from 'typedi'
@@ -15,7 +15,7 @@ import { ItemService } from '@services'
 @Service()
 @JsonController()
 export class Controller {
-  constructor(private service: ItemService) {}
+  constructor(readonly service: ItemService) {}
 
   @Get('/items')
   async all() {

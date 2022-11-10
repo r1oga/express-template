@@ -32,7 +32,7 @@ scripts:
 
   build:
     default:
-      script: 'nps format.fix lint.fix clean transpile'
+      script: 'nps clean transpile'
       description: 'Build project'
   start:
     dev:
@@ -45,5 +45,5 @@ scripts:
       script: 'NODE_ENV=production node -r module-alias/register ./dist'
       hiddenFromHelp: true
     default:
-      script: 'nps build start.prod'
+      script: 'nps lint.check format.check build start.prod'
       description: 'Start project (prod)'
