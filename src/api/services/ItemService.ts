@@ -7,34 +7,34 @@ import { ItemRepository } from '@repositories'
 @Service()
 export class ItemService {
   constructor(
-    private repository: ItemRepository,
-    @Logger() private logger: LoggerInterface,
+    readonly repository: ItemRepository,
+    @Logger() readonly logger: LoggerInterface,
   ) {}
 
   async findAll() {
     return this.repository.findAll().then((items) => {
-      this.logger.info('Find all items')
+      this.logger.info('Found all items')
       return items
     })
   }
 
   async findOne(id: number) {
     return this.repository.findOne(id).then((item) => {
-      this.logger.info('Find one item')
+      this.logger.info(`Found item ${id}`)
       return item
     })
   }
 
   async save(item: Item) {
     return this.repository.create(item).then((createdItem) => {
-      this.logger.info(`Item ${item.id} ${item.name} has been saved`)
+      this.logger.info(`Saved item ${item.id}`)
       return createdItem
     })
   }
 
   async update({ id, name }: Item) {
     return this.repository.update({ id, name }).then((updatedItem) => {
-      this.logger.info(`Update item ${id} with new name ${name}`)
+      this.logger.info(`Updated item ${id}`)
       return updatedItem
     })
   }

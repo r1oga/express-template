@@ -12,7 +12,7 @@ specifiers:
   class-validator: ^0.13.2
   eslint: ^8.26.0
   eslint-config-prettier: ^8.5.0
-  eslint-config-standard: ^17.0.0
+  eslint-config-standard-with-typescript: ^23.0.0
   eslint-plugin-import: ^2.26.0
   eslint-plugin-jest: ^27.1.3
   eslint-plugin-n: ^15.3.0
@@ -64,7 +64,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.41.0_wyqvi574yv7oiwfeinomdzmc3m
   eslint: 8.26.0
   eslint-config-prettier: 8.5.0_eslint@8.26.0
-  eslint-config-standard: 17.0.0_43wwz2xsig5yhgcv2rleettsby
+  eslint-config-standard-with-typescript: 23.0.0_mpv45knhy5uokvwrwfo4bhuywm
   eslint-plugin-import: 2.26.0_c2flhriocdzler6lrwbyxxyoca
   eslint-plugin-jest: 27.1.3_6amp5fdmvwluzjywjm3ep2edui
   eslint-plugin-n: 15.3.0_eslint@8.26.0
@@ -2082,6 +2082,28 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 8.26.0
+    dev: true
+
+  /eslint-config-standard-with-typescript/23.0.0_mpv45knhy5uokvwrwfo4bhuywm:
+    resolution: {integrity: sha512-iaaWifImn37Z1OXbNW1es7KI+S7D408F9ys0bpaQf2temeBWlvb0Nc5qHkOgYaRb5QxTZT32GGeN1gtswASOXA==}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      eslint: ^8.0.1
+      eslint-plugin-import: ^2.25.2
+      eslint-plugin-n: ^15.0.0
+      eslint-plugin-promise: ^6.0.0
+      typescript: '*'
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 5.41.0_huremdigmcnkianavgfk3x6iou
+      '@typescript-eslint/parser': 5.41.0_wyqvi574yv7oiwfeinomdzmc3m
+      eslint: 8.26.0
+      eslint-config-standard: 17.0.0_43wwz2xsig5yhgcv2rleettsby
+      eslint-plugin-import: 2.26.0_c2flhriocdzler6lrwbyxxyoca
+      eslint-plugin-n: 15.3.0_eslint@8.26.0
+      eslint-plugin-promise: 6.1.1_eslint@8.26.0
+      typescript: 4.8.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /eslint-config-standard/17.0.0_43wwz2xsig5yhgcv2rleettsby:
