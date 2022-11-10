@@ -38,7 +38,9 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install
+        run: |
+          pnpm i --ignore-scripts
+          pnpm exec prisma generate
 
       - name: Lint
         run: npm run nps lint.check
