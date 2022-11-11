@@ -39,17 +39,17 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pnpm i --ignore-scripts
+          pnpm i --ignore-scripts --reporter=silent
           pnpm exec prisma generate
 
       - name: Lint
-        run: npm run nps lint.check
+        run: npm run nps lint.ci
 
       - name: Format
-        run: npm run nps format.check
+        run: npm run nps format.ci
 
       - name: Build
         run: npm run nps build
 
       - name: Test
-        run: npm run nps test
+        run: npm run nps test.ci
