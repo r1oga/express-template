@@ -3,8 +3,8 @@ import { Item } from '@prisma/client'
 import { Controller } from '@controllers/Controller'
 import { ItemRepository } from '@repositories'
 import { ItemService } from '@services'
-import { createMockContext, DbMock } from './lib/RepositoryMock'
 import { logger } from '~/logger'
+import { createMockContext, DbMock } from './lib/RepositoryMock'
 
 describe('ItemsController', () => {
   let dbMock: DbMock

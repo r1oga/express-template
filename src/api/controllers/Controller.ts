@@ -1,3 +1,4 @@
+import { Item } from '@prisma/client'
 import {
   Body,
   Delete,
@@ -9,7 +10,6 @@ import {
 } from 'routing-controllers'
 import { Service } from 'typedi'
 
-import { Item } from '@prisma/client'
 import { ItemService } from '@services'
 
 @Service()

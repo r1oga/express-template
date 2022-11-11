@@ -12,7 +12,7 @@ export class ItemRepository {
   }
 
   update({ id, name }: Item) {
-    return this.db.item.update({ where: { id }, data: { name } })
+    return this.db.item.update({ data: { name }, where: { id } })
   }
 
   findAll() {
